@@ -6,7 +6,7 @@ resource "scaleway_instance_server" "instance" {
   enable_dynamic_ip = false
   security_group_id = scaleway_instance_security_group.security_group.id
 
-  additional_volume_ids = [scaleway_instance_volume.additional_volume[0].id]
+  additional_volume_ids = var.enable_additional_volume ? [scaleway_instance_volume.additional_volume[0].id] : null
 }
 
 resource "scaleway_instance_ip" "ip" {}
