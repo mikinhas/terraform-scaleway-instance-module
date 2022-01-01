@@ -53,3 +53,9 @@ variable "security_group_rules" {
   }))
   default = []
 }
+
+variable "enable_default_security" {
+  type        = string
+  description = "Enable default security"
+  default     = "true"
+}
