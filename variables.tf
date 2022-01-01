@@ -50,6 +50,7 @@ variable "security_group_rules" {
     action   = string,
     ip_range = string,
     port     = number,
+    protocol = string
   }))
   default = []
 }

@@ -37,6 +37,7 @@ resource "scaleway_instance_security_group_rules" "secuity_group" {
       action   = inbound_rule.value.action
       ip_range = inbound_rule.value.ip_range
       port     = inbound_rule.value.port
+      protocol = inbound_rule.value.protocol
     }
   }
 }
