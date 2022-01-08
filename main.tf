@@ -25,6 +25,8 @@ resource "scaleway_instance_security_group" "security_group" {
   inbound_default_policy  = var.inbound_default_policy
   outbound_default_policy = var.outbound_default_policy
 
+  external_rules = true
+
   enable_default_security = var.enable_default_security
 }
 
