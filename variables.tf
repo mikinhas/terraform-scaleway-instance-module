@@ -60,3 +60,9 @@ variable "enable_default_security" {
   description = "Enable default security"
   default     = "true"
 }
+
+variable "external_rules" {
+  type        = bool
+  description = "Enable external rules"
+  default     = true
+}
