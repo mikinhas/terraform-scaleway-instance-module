@@ -30,7 +30,7 @@ resource "scaleway_instance_security_group" "security_group" {
   enable_default_security = var.enable_default_security
 }
 
-resource "scaleway_instance_security_group_rules" "security_group" {
+resource "scaleway_instance_security_group_rules" "rules" {
   security_group_id = scaleway_instance_security_group.security_group.id
 
   dynamic "inbound_rule" {
