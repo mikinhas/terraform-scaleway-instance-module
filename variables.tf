@@ -66,3 +66,9 @@ variable "external_rules" {
   description = "Enable external rules"
   default     = true
 }
+
+variable "private_network_name" {
+  type        = string
+  description = "Name of the private_network"
+  default     = ""
+}

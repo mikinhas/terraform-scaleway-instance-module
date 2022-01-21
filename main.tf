@@ -1,3 +1,7 @@
+data "scaleway_vpc_private_network" "private_network" {
+  name = var.private_network_name
+}
+
 resource "scaleway_instance_server" "instance" {
   name              = var.instance_name
   type              = var.instance_type
@@ -7,6 +11,11 @@ resource "scaleway_instance_server" "instance" {
   security_group_id = scaleway_instance_security_group.security_group.id
 
   additional_volume_ids = var.enable_additional_volume ? [scaleway_instance_volume.additional_volume[0].id] : null
+
+  private_network {
+    pn_id = data.scaleway_vpc_private_network.private_network.id
+  }
+
 }
 
 resource "scaleway_instance_ip" "ip" {}
