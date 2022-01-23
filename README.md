@@ -48,4 +48,4 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_instance_ip_id"></a> [instance\_ip\_id](#output\_instance\_ip\_id) | Id of the IP |
+| <a name="output_instance_public_ip_id"></a> [instance\_public\_ip\_id](#output\_instance\_public\_ip\_id) | Id of the IP |
