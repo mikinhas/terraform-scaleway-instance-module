@@ -48,4 +48,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | Private Ip of the instance |
 | <a name="output_instance_public_ip_id"></a> [instance\_public\_ip\_id](#output\_instance\_public\_ip\_id) | Id of the IP |
