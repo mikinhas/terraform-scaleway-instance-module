@@ -23,6 +23,7 @@ No modules.
 | [scaleway_instance_security_group_rules.rules](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_security_group_rules) | resource |
 | [scaleway_instance_server.instance](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_server) | resource |
 | [scaleway_instance_volume.additional_volume](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_volume) | resource |
+| [scaleway_marketplace_image.image](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/data-sources/marketplace_image) | data source |
 | [scaleway_vpc_private_network.private_network](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/data-sources/vpc_private_network) | data source |
 
 ## Inputs
@@ -36,7 +37,7 @@ No modules.
 | <a name="input_enable_default_security"></a> [enable\_default\_security](#input\_enable\_default\_security) | Enable default security | `string` | `"true"` | no |
 | <a name="input_external_rules"></a> [external\_rules](#input\_external\_rules) | Enable external rules | `bool` | `true` | no |
 | <a name="input_inbound_default_policy"></a> [inbound\_default\_policy](#input\_inbound\_default\_policy) | n/a | `string` | `"drop"` | no |
-| <a name="input_instance_image"></a> [instance\_image](#input\_instance\_image) | n/a | `string` | n/a | yes |
+| <a name="input_instance_image_name"></a> [instance\_image\_name](#input\_instance\_image\_name) | n/a | `string` | n/a | yes |
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | n/a | `string` | n/a | yes |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | n/a | `string` | n/a | yes |
 | <a name="input_outbound_default_policy"></a> [outbound\_default\_policy](#input\_outbound\_default\_policy) | n/a | `string` | `"accept"` | no |

@@ -6,7 +6,7 @@ variable "instance_type" {
   type = string
 }
 
-variable "instance_image" {
+variable "instance_image_name" {
   type = string
 }
 

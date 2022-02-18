@@ -2,10 +2,15 @@ data "scaleway_vpc_private_network" "private_network" {
   name = var.private_network_name
 }
 
+data "scaleway_marketplace_image" "image" {
+  label         = var.instance_image_name
+  instance_type = var.instance_type
+}
+
 resource "scaleway_instance_server" "instance" {
   name              = var.instance_name
   type              = var.instance_type
-  image             = var.instance_image
+  image             = data.scaleway_marketplace_image.image.id
   ip_id             = scaleway_instance_ip.ip.id
   enable_dynamic_ip = false
   security_group_id = scaleway_instance_security_group.security_group.id
