@@ -1,3 +1,7 @@
+variable "project_id" {
+  type = string
+}
+
 variable "instance_name" {
   type = string
 }
@@ -71,4 +75,10 @@ variable "private_network_name" {
   type        = string
   description = "Name of the private_network"
   default     = ""
+}
+
+variable "create_public_ip" {
+  type        = string
+  description = "If true, create public ip"
+  default     = true
 }

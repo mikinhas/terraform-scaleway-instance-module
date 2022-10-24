@@ -8,10 +8,13 @@ data "scaleway_marketplace_image" "image" {
 }
 
 resource "scaleway_instance_server" "instance" {
-  name              = var.instance_name
-  type              = var.instance_type
-  image             = data.scaleway_marketplace_image.image.id
-  ip_id             = scaleway_instance_ip.ip.id
+  project_id = var.project_id
+
+  name  = var.instance_name
+  type  = var.instance_type
+  image = data.scaleway_marketplace_image.image.id
+
+  ip_id             = var.create_public_ip ? scaleway_instance_ip.ip[0].id : null
   enable_dynamic_ip = false
   security_group_id = scaleway_instance_security_group.security_group.id
 
@@ -23,8 +26,9 @@ resource "scaleway_instance_server" "instance" {
 
 }
 
-resource "scaleway_instance_ip" "ip" {}
-
+resource "scaleway_instance_ip" "ip" {
+  count = var.create_public_ip ? 1 : 0
+}
 
 resource "scaleway_instance_volume" "additional_volume" {
   count = var.enable_additional_volume == true ? 1 : 0
