@@ -2,9 +2,8 @@ data "scaleway_vpc_private_network" "private_network" {
   name = var.private_network_name
 }
 
-data "scaleway_marketplace_image" "image" {
-  label         = var.instance_image_name
-  instance_type = var.instance_type
+data "scaleway_instance_image" "image" {
+  image_id = var.instance_image_id
 }
 
 resource "scaleway_instance_server" "instance" {
@@ -12,7 +11,7 @@ resource "scaleway_instance_server" "instance" {
 
   name  = var.instance_name
   type  = var.instance_type
-  image = data.scaleway_marketplace_image.image.id
+  image = data.scaleway_instance_image.image.id
 
   ip_id             = var.create_public_ip ? scaleway_instance_ip.ip[0].id : null
   enable_dynamic_ip = false

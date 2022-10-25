@@ -10,7 +10,7 @@ variable "instance_type" {
   type = string
 }
 
-variable "instance_image_name" {
+variable "instance_image_id" {
   type = string
 }
 
