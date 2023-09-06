@@ -1,17 +1,9 @@
-data "scaleway_vpc_private_network" "private_network" {
-  name = var.private_network_name
-}
-
-data "scaleway_instance_image" "image" {
-  image_id = var.instance_image_id
-}
-
 resource "scaleway_instance_server" "instance" {
   project_id = var.project_id
 
   name  = var.instance_name
   type  = var.instance_type
-  image = data.scaleway_instance_image.image.id
+  image = var.instance_image_name
 
   ip_id             = var.create_public_ip ? scaleway_instance_ip.ip[0].id : null
   enable_dynamic_ip = false
@@ -20,7 +12,8 @@ resource "scaleway_instance_server" "instance" {
   additional_volume_ids = var.enable_additional_volume ? [scaleway_instance_volume.additional_volume[0].id] : null
 
   private_network {
-    pn_id = data.scaleway_vpc_private_network.private_network.id
+    pn_id = var.private_network_id
+
   }
 
 }

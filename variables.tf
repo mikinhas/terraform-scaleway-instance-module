@@ -10,7 +10,7 @@ variable "instance_type" {
   type = string
 }
 
-variable "instance_image_id" {
+variable "instance_image_name" {
   type = string
 }
 
@@ -69,6 +69,12 @@ variable "external_rules" {
   type        = bool
   description = "Enable external rules"
   default     = true
+}
+
+variable "private_network_id" {
+  type        = string
+  description = "Name of the private_network"
+  default     = ""
 }
 
 variable "private_network_name" {
