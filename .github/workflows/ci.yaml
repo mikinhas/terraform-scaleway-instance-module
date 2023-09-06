@@ -1,6 +1,8 @@
 ---
 name: linter
 on: [push]
+permissions: read-all
+
 jobs:
   terraform-fmt:
     runs-on: ubuntu-20.04

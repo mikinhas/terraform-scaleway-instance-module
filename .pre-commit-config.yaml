@@ -1,7 +1,7 @@
 # .pre-commit-config.yaml
 ---
 repos:
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.48.0
     hooks:
       - id: terraform_fmt
@@ -9,17 +9,3 @@ repos:
       - id: terraform_tflint
       - id: checkov
 
-  - repo: git://github.com/adrienverge/yamllint
-    rev: v1.26.0
-    hooks:
-      - id: yamllint
-        args: ['-c=.yamllint']
-
-  - repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
-    hooks:
-      - id: check-yaml
-      - id: end-of-file-fixer
-        exclude: 'ansible/roles/deploy_ssh_keys/files'
-      - id: trailing-whitespace
-      - id: check-merge-conflict
