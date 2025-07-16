@@ -5,6 +5,8 @@ module "simple_instance_with_pulic_ip" {
   instance_type       = var.instance_type
   instance_image_name = var.instance_image_name
 
+  private_network_id = var.private_network_id
+
   security_group_name = "test_simple_instance_with_public_ip"
   security_group_rules = [
     {
