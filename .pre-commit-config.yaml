@@ -6,6 +6,7 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_docs_replace
+        exclude: tests/.*$
       - id: terraform_tflint
       - id: checkov
 
