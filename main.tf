@@ -1,10 +1,16 @@
+locals {
+  ip_ids = concat(
+    var.create_public_ipv4 ? [scaleway_instance_ip.ipv4[0].id] : [],
+    var.create_public_ipv6 ? [scaleway_instance_ip.ipv6[0].id] : []
+  )
+}
 resource "scaleway_instance_server" "instance" {
 
   name  = var.instance_name
   type  = var.instance_type
   image = var.instance_image_name
 
-  ip_id             = var.create_public_ip ? scaleway_instance_ip.ip[0].id : null
+  ip_ids            = length(local.ip_ids) > 0 ? local.ip_ids : null
   enable_dynamic_ip = false
   security_group_id = scaleway_instance_security_group.security_group.id
 
@@ -17,8 +23,14 @@ resource "scaleway_instance_server" "instance" {
 
 }
 
-resource "scaleway_instance_ip" "ip" {
-  count = var.create_public_ip ? 1 : 0
+resource "scaleway_instance_ip" "ipv4" {
+  count = var.create_public_ipv4 ? 1 : 0
+  type  = "routed_ipv4"
+}
+
+resource "scaleway_instance_ip" "ipv6" {
+  count = var.create_public_ipv6 ? 1 : 0
+  type  = "routed_ipv6"
 }
 
 resource "scaleway_instance_volume" "additional_volume" {

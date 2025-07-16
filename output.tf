@@ -1,10 +1,10 @@
-output "instance_public_ip_id" {
-  value       = scaleway_instance_ip.ip[*].id
-  description = "Id of the IP"
+output "instance_public_ipv4_id" {
+  value       = scaleway_instance_ip.ipv4[*].id
+  description = "Id of the ipv4"
 }
 
-output "instance_public_ip" {
-  value       = scaleway_instance_ip.ip[*].address
+output "instance_public_ipv4" {
+  value       = scaleway_instance_ip.ipv4[*].address
   description = "Public Address of the Instance"
 }
 

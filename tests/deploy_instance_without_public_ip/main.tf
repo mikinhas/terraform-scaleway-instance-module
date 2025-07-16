@@ -1,5 +1,5 @@
 module "simple_instance_with_pulic_ip" {
-  source     = "../../"
+  source = "../../"
 
   instance_name       = "test_simple_instance_without_public_ip"
   instance_type       = var.instance_type
@@ -17,5 +17,6 @@ module "simple_instance_with_pulic_ip" {
     },
   ]
 
-  create_public_ip = false
+  create_public_ipv4 = false
+  create_public_ipv6 = false
 }
