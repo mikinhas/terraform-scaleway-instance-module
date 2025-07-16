@@ -1,6 +1,5 @@
 module "simple_instance_with_pulic_ip" {
   source     = "../../"
-  project_id = var.project_id
 
   instance_name       = "test_simple_instance_with_public_ip"
   instance_type       = var.instance_type

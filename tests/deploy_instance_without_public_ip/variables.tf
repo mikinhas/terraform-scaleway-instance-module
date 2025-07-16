@@ -1,7 +1,3 @@
-variable "project_id" {
-  type = string
-}
-
 variable "instance_type" {
   type    = string
   default = "DEV1-S"
