@@ -17,4 +17,5 @@ module "simple_instance_with_pulic_ip" {
     },
   ]
 
+  create_public_ipv6 = false
 }

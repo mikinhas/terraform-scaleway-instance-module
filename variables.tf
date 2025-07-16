@@ -73,7 +73,13 @@ variable "private_network_id" {
   default     = ""
 }
 
-variable "create_public_ip" {
+variable "create_public_ipv4" {
+  type        = string
+  description = "If true, create public ip"
+  default     = true
+}
+
+variable "create_public_ipv6" {
   type        = string
   description = "If true, create public ip"
   default     = true
