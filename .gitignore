@@ -3,3 +3,4 @@
 test.tfvars
 terraform.tfstate
 terraform.tfstate.backup
+.envrc
