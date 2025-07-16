@@ -1,5 +1,4 @@
 resource "scaleway_instance_server" "instance" {
-  project_id = var.project_id
 
   name  = var.instance_name
   type  = var.instance_type
