@@ -51,6 +51,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | Private Ip of the instance |
+| <a name="output_instance_private_ips"></a> [instance\_private\_ips](#output\_instance\_private\_ips) | Private Ip of the instance |
 | <a name="output_instance_public_ipv4"></a> [instance\_public\_ipv4](#output\_instance\_public\_ipv4) | Public Address of the Instance |
 | <a name="output_instance_public_ipv4_id"></a> [instance\_public\_ipv4\_id](#output\_instance\_public\_ipv4\_id) | Id of the ipv4 |

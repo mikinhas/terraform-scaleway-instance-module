@@ -8,7 +8,7 @@ output "instance_public_ipv4" {
   description = "Public Address of the Instance"
 }
 
-output "instance_private_ip" {
-  value       = scaleway_instance_server.instance.private_ip
+output "instance_private_ips" {
+  value       = scaleway_instance_server.instance.private_ips
   description = "Private Ip of the instance"
 }
