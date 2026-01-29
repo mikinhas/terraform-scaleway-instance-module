@@ -51,6 +51,11 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_instance_private_ips"></a> [instance\_private\_ips](#output\_instance\_private\_ips) | Private Ip of the instance |
-| <a name="output_instance_public_ipv4"></a> [instance\_public\_ipv4](#output\_instance\_public\_ipv4) | Public Address of the Instance |
-| <a name="output_instance_public_ipv4_id"></a> [instance\_public\_ipv4\_id](#output\_instance\_public\_ipv4\_id) | Id of the ipv4 |
+| <a name="output_additional_volume_id"></a> [additional\_volume\_id](#output\_additional\_volume\_id) | ID of the additional volume (null if not enabled) |
+| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | ID of the instance |
+| <a name="output_instance_private_ips"></a> [instance\_private\_ips](#output\_instance\_private\_ips) | Private IPs of the instance |
+| <a name="output_instance_public_ipv4"></a> [instance\_public\_ipv4](#output\_instance\_public\_ipv4) | Public IPv4 address of the instance |
+| <a name="output_instance_public_ipv4_id"></a> [instance\_public\_ipv4\_id](#output\_instance\_public\_ipv4\_id) | ID of the public IPv4 address |
+| <a name="output_instance_public_ipv6"></a> [instance\_public\_ipv6](#output\_instance\_public\_ipv6) | Public IPv6 address of the instance |
+| <a name="output_instance_public_ipv6_id"></a> [instance\_public\_ipv6\_id](#output\_instance\_public\_ipv6\_id) | ID of the public IPv6 address |
+| <a name="output_security_group_id"></a> [security\_group\_id](#output\_security\_group\_id) | ID of the security group |
