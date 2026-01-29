@@ -1,4 +1,4 @@
-module "simple_instance_with_pulic_ip" {
+module "simple_instance_with_public_ipv4_only" {
   source = "../../"
 
   instance_name       = "test_simple_instance_with_public_ip"
