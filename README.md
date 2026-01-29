@@ -33,10 +33,10 @@ No modules.
 | <a name="input_additional_volume_name"></a> [additional\_volume\_name](#input\_additional\_volume\_name) | n/a | `string` | `"default"` | no |
 | <a name="input_additional_volume_size"></a> [additional\_volume\_size](#input\_additional\_volume\_size) | n/a | `number` | `10` | no |
 | <a name="input_additional_volume_type"></a> [additional\_volume\_type](#input\_additional\_volume\_type) | n/a | `string` | `"b_ssd"` | no |
-| <a name="input_create_public_ipv4"></a> [create\_public\_ipv4](#input\_create\_public\_ipv4) | If true, create public ip | `string` | `true` | no |
-| <a name="input_create_public_ipv6"></a> [create\_public\_ipv6](#input\_create\_public\_ipv6) | If true, create public ip | `string` | `true` | no |
+| <a name="input_create_public_ipv4"></a> [create\_public\_ipv4](#input\_create\_public\_ipv4) | If true, create public IPv4 address | `bool` | `true` | no |
+| <a name="input_create_public_ipv6"></a> [create\_public\_ipv6](#input\_create\_public\_ipv6) | If true, create public IPv6 address | `bool` | `true` | no |
 | <a name="input_enable_additional_volume"></a> [enable\_additional\_volume](#input\_enable\_additional\_volume) | n/a | `bool` | `false` | no |
-| <a name="input_enable_default_security"></a> [enable\_default\_security](#input\_enable\_default\_security) | Enable default security | `string` | `"true"` | no |
+| <a name="input_enable_default_security"></a> [enable\_default\_security](#input\_enable\_default\_security) | Enable default security | `bool` | `true` | no |
 | <a name="input_external_rules"></a> [external\_rules](#input\_external\_rules) | Enable external rules | `bool` | `true` | no |
 | <a name="input_inbound_default_policy"></a> [inbound\_default\_policy](#input\_inbound\_default\_policy) | n/a | `string` | `"drop"` | no |
 | <a name="input_instance_image_name"></a> [instance\_image\_name](#input\_instance\_image\_name) | n/a | `string` | n/a | yes |

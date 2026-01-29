@@ -56,9 +56,9 @@ variable "security_group_rules" {
 }
 
 variable "enable_default_security" {
-  type        = string
+  type        = bool
   description = "Enable default security"
-  default     = "true"
+  default     = true
 }
 
 variable "external_rules" {
@@ -74,14 +74,14 @@ variable "private_network_id" {
 }
 
 variable "create_public_ipv4" {
-  type        = string
-  description = "If true, create public ip"
+  type        = bool
+  description = "If true, create public IPv4 address"
   default     = true
 }
 
 variable "create_public_ipv6" {
-  type        = string
-  description = "If true, create public ip"
+  type        = bool
+  description = "If true, create public IPv6 address"
   default     = true
 }
 
