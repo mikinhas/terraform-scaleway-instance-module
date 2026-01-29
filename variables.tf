@@ -1,58 +1,89 @@
 variable "instance_name" {
-  type = string
+  type        = string
+  description = "Name of the instance"
 }
 
 variable "instance_type" {
-  type = string
+  type        = string
+  description = "Instance type (e.g., DEV1-S, GP1-S)"
 }
 
 variable "instance_image_name" {
-  type = string
+  type        = string
+  description = "Image name for the instance (e.g., ubuntu_jammy)"
 }
 
 variable "security_group_name" {
-  type    = string
-  default = "default_security_group"
+  type        = string
+  description = "Name of the security group"
+  default     = "default_security_group"
 }
 
 variable "enable_additional_volume" {
-  type    = bool
-  default = false
+  type        = bool
+  description = "Enable additional block volume"
+  default     = false
 }
 
 variable "additional_volume_type" {
-  type    = string
-  default = "b_ssd"
+  type        = string
+  description = "Type of the additional volume"
+  default     = "b_ssd"
+
+  validation {
+    condition     = contains(["b_ssd", "l_ssd"], var.additional_volume_type)
+    error_message = "Must be 'b_ssd' or 'l_ssd'."
+  }
 }
 
 variable "additional_volume_name" {
-  type    = string
-  default = "default"
+  type        = string
+  description = "Name of the additional volume"
+  default     = "default"
 }
 
 variable "additional_volume_size" {
-  type    = number
-  default = 10
+  type        = number
+  description = "Size of the additional volume in GB"
+  default     = 10
+
+  validation {
+    condition     = var.additional_volume_size >= 1
+    error_message = "Volume size must be at least 1 GB."
+  }
 }
 
 variable "inbound_default_policy" {
-  type    = string
-  default = "drop"
+  type        = string
+  description = "Default policy for inbound traffic"
+  default     = "drop"
+
+  validation {
+    condition     = contains(["accept", "drop"], var.inbound_default_policy)
+    error_message = "Must be 'accept' or 'drop'."
+  }
 }
 
 variable "outbound_default_policy" {
-  type    = string
-  default = "accept"
+  type        = string
+  description = "Default policy for outbound traffic"
+  default     = "accept"
+
+  validation {
+    condition     = contains(["accept", "drop"], var.outbound_default_policy)
+    error_message = "Must be 'accept' or 'drop'."
+  }
 }
 
 variable "security_group_rules" {
   type = list(object({
-    action   = string,
-    ip_range = string,
-    port     = number,
+    action   = string
+    ip_range = string
+    port     = number
     protocol = string
   }))
-  default = []
+  description = "List of inbound security group rules"
+  default     = []
 }
 
 variable "enable_default_security" {
@@ -69,7 +100,7 @@ variable "external_rules" {
 
 variable "private_network_id" {
   type        = string
-  description = "Name of the private_network"
+  description = "ID of the private network to attach"
   default     = ""
 }
 

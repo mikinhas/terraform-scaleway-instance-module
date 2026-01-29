@@ -30,22 +30,22 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_volume_name"></a> [additional\_volume\_name](#input\_additional\_volume\_name) | n/a | `string` | `"default"` | no |
-| <a name="input_additional_volume_size"></a> [additional\_volume\_size](#input\_additional\_volume\_size) | n/a | `number` | `10` | no |
-| <a name="input_additional_volume_type"></a> [additional\_volume\_type](#input\_additional\_volume\_type) | n/a | `string` | `"b_ssd"` | no |
+| <a name="input_additional_volume_name"></a> [additional\_volume\_name](#input\_additional\_volume\_name) | Name of the additional volume | `string` | `"default"` | no |
+| <a name="input_additional_volume_size"></a> [additional\_volume\_size](#input\_additional\_volume\_size) | Size of the additional volume in GB | `number` | `10` | no |
+| <a name="input_additional_volume_type"></a> [additional\_volume\_type](#input\_additional\_volume\_type) | Type of the additional volume | `string` | `"b_ssd"` | no |
 | <a name="input_create_public_ipv4"></a> [create\_public\_ipv4](#input\_create\_public\_ipv4) | If true, create public IPv4 address | `bool` | `true` | no |
 | <a name="input_create_public_ipv6"></a> [create\_public\_ipv6](#input\_create\_public\_ipv6) | If true, create public IPv6 address | `bool` | `true` | no |
-| <a name="input_enable_additional_volume"></a> [enable\_additional\_volume](#input\_enable\_additional\_volume) | n/a | `bool` | `false` | no |
+| <a name="input_enable_additional_volume"></a> [enable\_additional\_volume](#input\_enable\_additional\_volume) | Enable additional block volume | `bool` | `false` | no |
 | <a name="input_enable_default_security"></a> [enable\_default\_security](#input\_enable\_default\_security) | Enable default security | `bool` | `true` | no |
 | <a name="input_external_rules"></a> [external\_rules](#input\_external\_rules) | Enable external rules | `bool` | `true` | no |
-| <a name="input_inbound_default_policy"></a> [inbound\_default\_policy](#input\_inbound\_default\_policy) | n/a | `string` | `"drop"` | no |
-| <a name="input_instance_image_name"></a> [instance\_image\_name](#input\_instance\_image\_name) | n/a | `string` | n/a | yes |
-| <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | n/a | `string` | n/a | yes |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | n/a | `string` | n/a | yes |
-| <a name="input_outbound_default_policy"></a> [outbound\_default\_policy](#input\_outbound\_default\_policy) | n/a | `string` | `"accept"` | no |
-| <a name="input_private_network_id"></a> [private\_network\_id](#input\_private\_network\_id) | Name of the private\_network | `string` | `""` | no |
-| <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | n/a | `string` | `"default_security_group"` | no |
-| <a name="input_security_group_rules"></a> [security\_group\_rules](#input\_security\_group\_rules) | n/a | <pre>list(object({<br/>    action   = string,<br/>    ip_range = string,<br/>    port     = number,<br/>    protocol = string<br/>  }))</pre> | `[]` | no |
+| <a name="input_inbound_default_policy"></a> [inbound\_default\_policy](#input\_inbound\_default\_policy) | Default policy for inbound traffic | `string` | `"drop"` | no |
+| <a name="input_instance_image_name"></a> [instance\_image\_name](#input\_instance\_image\_name) | Image name for the instance (e.g., ubuntu\_jammy) | `string` | n/a | yes |
+| <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | Name of the instance | `string` | n/a | yes |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type (e.g., DEV1-S, GP1-S) | `string` | n/a | yes |
+| <a name="input_outbound_default_policy"></a> [outbound\_default\_policy](#input\_outbound\_default\_policy) | Default policy for outbound traffic | `string` | `"accept"` | no |
+| <a name="input_private_network_id"></a> [private\_network\_id](#input\_private\_network\_id) | ID of the private network to attach | `string` | `""` | no |
+| <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | Name of the security group | `string` | `"default_security_group"` | no |
+| <a name="input_security_group_rules"></a> [security\_group\_rules](#input\_security\_group\_rules) | List of inbound security group rules | <pre>list(object({<br/>    action   = string<br/>    ip_range = string<br/>    port     = number<br/>    protocol = string<br/>  }))</pre> | `[]` | no |
 
 ## Outputs
 
