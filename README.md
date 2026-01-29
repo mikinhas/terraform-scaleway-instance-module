@@ -2,14 +2,14 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | 2.57.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | ~> 2.57 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | 2.57.0 |
+| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | ~> 2.57 |
 
 ## Modules
 
@@ -19,12 +19,12 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [scaleway_instance_ip.ipv4](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_ip) | resource |
-| [scaleway_instance_ip.ipv6](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_ip) | resource |
-| [scaleway_instance_security_group.security_group](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_security_group) | resource |
-| [scaleway_instance_security_group_rules.rules](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_security_group_rules) | resource |
-| [scaleway_instance_server.instance](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_server) | resource |
-| [scaleway_instance_volume.additional_volume](https://registry.terraform.io/providers/scaleway/scaleway/2.57.0/docs/resources/instance_volume) | resource |
+| [scaleway_instance_ip.ipv4](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_ip) | resource |
+| [scaleway_instance_ip.ipv6](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_ip) | resource |
+| [scaleway_instance_security_group.security_group](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_security_group) | resource |
+| [scaleway_instance_security_group_rules.rules](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_security_group_rules) | resource |
+| [scaleway_instance_server.instance](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_server) | resource |
+| [scaleway_instance_volume.additional_volume](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_volume) | resource |
 
 ## Inputs
 
