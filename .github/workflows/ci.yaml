@@ -4,11 +4,11 @@ on: [push]
 permissions: read-all
 
 jobs:
-  terraform-fmt:
-    runs-on: ubuntu-20.04
+  opentofu-fmt:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
+      - uses: actions/checkout@v4
+      - uses: opentofu/setup-opentofu@v1
         with:
-          terraform_version: 1.0.0
-      - run: terraform fmt -recursive --diff -check
+          tofu_version: 1.8.0
+      - run: tofu fmt -recursive --diff -check
