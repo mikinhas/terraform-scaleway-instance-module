@@ -16,9 +16,11 @@ resource "scaleway_instance_server" "instance" {
 
   additional_volume_ids = var.enable_additional_volume ? [scaleway_instance_volume.additional_volume[0].id] : null
 
-  private_network {
-    pn_id = var.private_network_id
-
+  dynamic "private_network" {
+    for_each = var.private_network_id != "" ? [var.private_network_id] : []
+    content {
+      pn_id = private_network.value
+    }
   }
 
 }
