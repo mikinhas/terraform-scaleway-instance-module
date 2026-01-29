@@ -43,6 +43,7 @@ No modules.
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | Name of the instance | `string` | n/a | yes |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type (e.g., DEV1-S, GP1-S) | `string` | n/a | yes |
 | <a name="input_outbound_default_policy"></a> [outbound\_default\_policy](#input\_outbound\_default\_policy) | Default policy for outbound traffic | `string` | `"accept"` | no |
+| <a name="input_outbound_security_group_rules"></a> [outbound\_security\_group\_rules](#input\_outbound\_security\_group\_rules) | List of outbound security group rules (empty = allow all by default) | <pre>list(object({<br/>    action   = string<br/>    ip_range = string<br/>    port     = number<br/>    protocol = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_private_network_id"></a> [private\_network\_id](#input\_private\_network\_id) | ID of the private network to attach | `string` | `""` | no |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | Name of the security group | `string` | `"default_security_group"` | no |
 | <a name="input_security_group_rules"></a> [security\_group\_rules](#input\_security\_group\_rules) | List of inbound security group rules | <pre>list(object({<br/>    action   = string<br/>    ip_range = string<br/>    port     = number<br/>    protocol = string<br/>  }))</pre> | `[]` | no |

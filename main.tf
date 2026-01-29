@@ -68,4 +68,14 @@ resource "scaleway_instance_security_group_rules" "rules" {
       protocol = inbound_rule.value.protocol
     }
   }
+
+  dynamic "outbound_rule" {
+    for_each = var.outbound_security_group_rules
+    content {
+      action   = outbound_rule.value.action
+      ip_range = outbound_rule.value.ip_range
+      port     = outbound_rule.value.port
+      protocol = outbound_rule.value.protocol
+    }
+  }
 }

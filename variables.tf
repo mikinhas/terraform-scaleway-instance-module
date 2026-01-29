@@ -86,6 +86,17 @@ variable "security_group_rules" {
   default     = []
 }
 
+variable "outbound_security_group_rules" {
+  type = list(object({
+    action   = string
+    ip_range = string
+    port     = number
+    protocol = string
+  }))
+  description = "List of outbound security group rules (empty = allow all by default)"
+  default     = []
+}
+
 variable "enable_default_security" {
   type        = bool
   description = "Enable default security"
