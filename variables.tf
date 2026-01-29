@@ -116,3 +116,9 @@ variable "create_public_ipv6" {
   default     = true
 }
 
+variable "tags" {
+  type        = list(string)
+  description = "Tags to apply to all resources"
+  default     = []
+}
+

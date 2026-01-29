@@ -46,6 +46,7 @@ No modules.
 | <a name="input_private_network_id"></a> [private\_network\_id](#input\_private\_network\_id) | ID of the private network to attach | `string` | `""` | no |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | Name of the security group | `string` | `"default_security_group"` | no |
 | <a name="input_security_group_rules"></a> [security\_group\_rules](#input\_security\_group\_rules) | List of inbound security group rules | <pre>list(object({<br/>    action   = string<br/>    ip_range = string<br/>    port     = number<br/>    protocol = string<br/>  }))</pre> | `[]` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to all resources | `list(string)` | `[]` | no |
 
 ## Outputs
 

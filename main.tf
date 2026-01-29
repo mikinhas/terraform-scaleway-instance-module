@@ -5,10 +5,10 @@ locals {
   )
 }
 resource "scaleway_instance_server" "instance" {
-
   name  = var.instance_name
   type  = var.instance_type
   image = var.instance_image_name
+  tags  = var.tags
 
   ip_ids            = length(local.ip_ids) > 0 ? local.ip_ids : null
   enable_dynamic_ip = false
@@ -22,17 +22,18 @@ resource "scaleway_instance_server" "instance" {
       pn_id = private_network.value
     }
   }
-
 }
 
 resource "scaleway_instance_ip" "ipv4" {
   count = var.create_public_ipv4 ? 1 : 0
   type  = "routed_ipv4"
+  tags  = var.tags
 }
 
 resource "scaleway_instance_ip" "ipv6" {
   count = var.create_public_ipv6 ? 1 : 0
   type  = "routed_ipv6"
+  tags  = var.tags
 }
 
 resource "scaleway_instance_volume" "additional_volume" {
@@ -41,12 +42,14 @@ resource "scaleway_instance_volume" "additional_volume" {
   type       = var.additional_volume_type
   name       = var.additional_volume_name
   size_in_gb = var.additional_volume_size
+  tags       = var.tags
 }
 
 resource "scaleway_instance_security_group" "security_group" {
   name                    = var.security_group_name
   inbound_default_policy  = var.inbound_default_policy
   outbound_default_policy = var.outbound_default_policy
+  tags                    = var.tags
 
   external_rules = var.external_rules
 
