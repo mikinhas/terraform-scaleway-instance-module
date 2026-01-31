@@ -19,23 +19,20 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [scaleway_block_volume.additional_volumes](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/block_volume) | resource |
 | [scaleway_instance_ip.ipv4](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_ip) | resource |
 | [scaleway_instance_ip.ipv6](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_ip) | resource |
 | [scaleway_instance_security_group.security_group](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_security_group) | resource |
 | [scaleway_instance_security_group_rules.rules](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_security_group_rules) | resource |
 | [scaleway_instance_server.instance](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_server) | resource |
-| [scaleway_instance_volume.additional_volume](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_volume) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_volume_name"></a> [additional\_volume\_name](#input\_additional\_volume\_name) | Name of the additional volume | `string` | `"default"` | no |
-| <a name="input_additional_volume_size"></a> [additional\_volume\_size](#input\_additional\_volume\_size) | Size of the additional volume in GB | `number` | `10` | no |
-| <a name="input_additional_volume_type"></a> [additional\_volume\_type](#input\_additional\_volume\_type) | Type of the additional volume | `string` | `"b_ssd"` | no |
+| <a name="input_additional_volumes"></a> [additional\_volumes](#input\_additional\_volumes) | List of additional block volumes to create and attach | <pre>list(object({<br/>    name = string<br/>    size = number<br/>    iops = optional(number, 5000)<br/>  }))</pre> | `[]` | no |
 | <a name="input_create_public_ipv4"></a> [create\_public\_ipv4](#input\_create\_public\_ipv4) | If true, create public IPv4 address | `bool` | `true` | no |
 | <a name="input_create_public_ipv6"></a> [create\_public\_ipv6](#input\_create\_public\_ipv6) | If true, create public IPv6 address | `bool` | `true` | no |
-| <a name="input_enable_additional_volume"></a> [enable\_additional\_volume](#input\_enable\_additional\_volume) | Enable additional block volume | `bool` | `false` | no |
 | <a name="input_enable_default_security"></a> [enable\_default\_security](#input\_enable\_default\_security) | Enable default security | `bool` | `true` | no |
 | <a name="input_external_rules"></a> [external\_rules](#input\_external\_rules) | Enable external rules | `bool` | `true` | no |
 | <a name="input_inbound_default_policy"></a> [inbound\_default\_policy](#input\_inbound\_default\_policy) | Default policy for inbound traffic | `string` | `"drop"` | no |
@@ -53,7 +50,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_additional_volume_id"></a> [additional\_volume\_id](#output\_additional\_volume\_id) | ID of the additional volume (null if not enabled) |
+| <a name="output_additional_volume_ids"></a> [additional\_volume\_ids](#output\_additional\_volume\_ids) | Map of additional block volume names to their IDs |
 | <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | ID of the instance |
 | <a name="output_instance_private_ips"></a> [instance\_private\_ips](#output\_instance\_private\_ips) | Private IPs of the instance |
 | <a name="output_instance_public_ipv4"></a> [instance\_public\_ipv4](#output\_instance\_public\_ipv4) | Public IPv4 address of the instance |

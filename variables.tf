@@ -19,38 +19,14 @@ variable "security_group_name" {
   default     = "default_security_group"
 }
 
-variable "enable_additional_volume" {
-  type        = bool
-  description = "Enable additional block volume"
-  default     = false
-}
-
-variable "additional_volume_type" {
-  type        = string
-  description = "Type of the additional volume"
-  default     = "b_ssd"
-
-  validation {
-    condition     = contains(["b_ssd", "l_ssd"], var.additional_volume_type)
-    error_message = "Must be 'b_ssd' or 'l_ssd'."
-  }
-}
-
-variable "additional_volume_name" {
-  type        = string
-  description = "Name of the additional volume"
-  default     = "default"
-}
-
-variable "additional_volume_size" {
-  type        = number
-  description = "Size of the additional volume in GB"
-  default     = 10
-
-  validation {
-    condition     = var.additional_volume_size >= 1
-    error_message = "Volume size must be at least 1 GB."
-  }
+variable "additional_volumes" {
+  type = list(object({
+    name = string
+    size = number
+    iops = optional(number, 5000)
+  }))
+  description = "List of additional block volumes to create and attach"
+  default     = []
 }
 
 variable "inbound_default_policy" {

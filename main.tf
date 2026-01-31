@@ -14,7 +14,7 @@ resource "scaleway_instance_server" "instance" {
   enable_dynamic_ip = false
   security_group_id = scaleway_instance_security_group.security_group.id
 
-  additional_volume_ids = var.enable_additional_volume ? [scaleway_instance_volume.additional_volume[0].id] : null
+  additional_volume_ids = length(var.additional_volumes) > 0 ? [for v in scaleway_block_volume.additional_volumes : v.id] : null
 
   dynamic "private_network" {
     for_each = var.private_network_id != "" ? [var.private_network_id] : []
@@ -36,12 +36,12 @@ resource "scaleway_instance_ip" "ipv6" {
   tags  = var.tags
 }
 
-resource "scaleway_instance_volume" "additional_volume" {
-  count = var.enable_additional_volume == true ? 1 : 0
+resource "scaleway_block_volume" "additional_volumes" {
+  for_each = { for v in var.additional_volumes : v.name => v }
 
-  type       = var.additional_volume_type
-  name       = var.additional_volume_name
-  size_in_gb = var.additional_volume_size
+  name       = each.value.name
+  size_in_gb = each.value.size
+  iops       = each.value.iops
   tags       = var.tags
 }
 

@@ -33,7 +33,7 @@ output "security_group_id" {
   description = "ID of the security group"
 }
 
-output "additional_volume_id" {
-  value       = var.enable_additional_volume ? scaleway_instance_volume.additional_volume[0].id : null
-  description = "ID of the additional volume (null if not enabled)"
+output "additional_volume_ids" {
+  value       = { for name, v in scaleway_block_volume.additional_volumes : name => v.id }
+  description = "Map of additional block volume names to their IDs"
 }
